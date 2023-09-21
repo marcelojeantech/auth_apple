@@ -50,7 +50,7 @@ const getUserId = (token) => {
 app.post('/auth', bodyParser.urlencoded({ extended: false }), (req, res) => {
 	const clientSecret = getClientSecret()
 	console.log('@@code', req.body.code)
-	const requestBody = {
+	/*const requestBody = {
 		grant_type: 'authorization_code',
 		code: req.body.code,
 		redirect_uri: process.env.REDIRECT_URI,
@@ -76,7 +76,7 @@ app.post('/auth', bodyParser.urlencoded({ extended: false }), (req, res) => {
 			success: false,
 			error: error.response.data
 		})
-	})
+	})*/
 })
 
 app.post('/refresh-token', bodyParser.urlencoded({ extended: false }), (req, res) => {
