@@ -49,6 +49,7 @@ const getUserId = (token) => {
 
 app.post('/auth', bodyParser.urlencoded({ extended: false }), (req, res) => {
 	const clientSecret = getClientSecret()
+	console.log('@@code', req.body.code)
 	const requestBody = {
 		grant_type: 'authorization_code',
 		code: req.body.code,
