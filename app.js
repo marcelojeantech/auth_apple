@@ -51,6 +51,10 @@ app.post('/auth', bodyParser.urlencoded({ extended: false }), (req, res) => {
 	const clientSecret = getClientSecret()
 	console.log('@@others', req.body)
 	console.log('@@code', req.body.code)
+	return res.json({
+			success: true,
+			body: req.body
+		})
 	/*const requestBody = {
 		grant_type: 'authorization_code',
 		code: req.body.code,
