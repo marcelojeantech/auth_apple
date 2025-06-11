@@ -12,7 +12,7 @@ const querystring = require('querystring')
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')))
 
 const getClientSecret = () => {
-	const privateKey = fs.readFileSync(process.env.PRIVATE_KEY_FILE_PATH);
+	 const privateKey = process.env.PRIVATE_KEY_FILE_PATH?.replace(/\\n/g, '\n');
 	const headers = {
         "alg": "ES256",
 		"kid": process.env.KEY_ID
